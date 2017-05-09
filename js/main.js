@@ -4,18 +4,12 @@ var redScore = 0;
 var blueScore = 0;
 var SIDES = 8;
 var newEdge;
-// var createTable = require('./createTable.js');
-// var isLegitEdge = require('./isLegitEdge.js');
+var createTable = require('./createTable.js');
+var isLegitEdge = require('./isLegitEdge.js');
 
 
-function fadeInDots() {
-  var dots = document.querySelectorAll('.dot');
-  for(let i = 0; i < dots.length; i++) {
-    setTimeout(function() {
-      dots[i].classList.add('appear');
-    }, 100 + Math.random() * 1500);
-  }
-}
+
+
 
 function createTable(side){
   var tbody = document.getElementById("matrix");
@@ -39,6 +33,7 @@ function createTable(side){
     }, 2400);
   }
 }
+
 
 function isLegitEdge(prev, current){
   var thisID = current.id.split("x");

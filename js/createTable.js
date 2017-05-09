@@ -1,4 +1,13 @@
-var createTable = function createTable(side){
+function fadeInDots() {
+  var dots = document.querySelectorAll('.dot');
+  for(let i = 0; i < dots.length; i++) {
+    setTimeout(function() {
+      dots[i].classList.add('appear');
+    }, 100 + Math.random() * 1500);
+  }
+}
+
+function createTable(side){
   var tbody = document.getElementById("matrix");
   tbody.innerHTML = '';
   for (var row = 0; row < side; row++){
